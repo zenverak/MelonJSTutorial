@@ -16,13 +16,13 @@
    </properties>
   </tile>
  </tileset>
- <imagelayer name="parallax1" width="20" height="15" visible="0">
+ <imagelayer name="parallax1" width="20" height="15">
   <image source="../img/area01_bkg0.png"/>
   <properties>
    <property name="ratio" value=".25"/>
   </properties>
  </imagelayer>
- <imagelayer name="parallax2" width="20" height="15" visible="0">
+ <imagelayer name="parallax2" width="20" height="15">
   <image source="../img/area01_bkg1.png"/>
   <properties>
    <property name="ratio" value=".35"/>
@@ -55,7 +55,11 @@
   <object name="CoinEntity" x="85" y="81"/>
   <object name="CoinEntity" x="157" y="80"/>
   <object name="CoinEntity" x="349" y="182"/>
-  <object name="CoinEntity" x="376" y="181"/>
+  <object name="CoinEntity" x="376" y="181">
+   <properties>
+    <property name="image" value="spinning_coin_gold"/>
+   </properties>
+  </object>
   <object name="CoinEntity" x="320" y="174"/>
   <object name="CoinEntity" x="570" y="303"/>
  </objectgroup>

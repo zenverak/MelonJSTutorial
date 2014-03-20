@@ -11,7 +11,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			this.vel.x-=this.accel.x * me.timer.tick;
 		}else if(me.input.isKeyPressed("right")){
 			this.flipX(false);
-			this.vel.x =+ this.accel.x *me.timer.tick;
+			this.vel.x += this.accel.x *me.timer.tick;
 		} else{
 			this.vel.x = 0;
 		}
@@ -44,8 +44,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
 });
 game.CoinEntity = me.CollectableEntity.extend({
 	init: function(x,y,settings){
+	settings.image ="spinning_coin_gold";
+  	settings.spritewidth = 32;
 		this.parent(x,y,settings);
-		this.image ="spinning_coin_gold";
 	},
 	onCollision: function(){
 		this.collidable= false;
@@ -62,6 +63,7 @@ game.EnemyEntity = me.ObjectEntity.extend({
 		this.endX = x + settings.width - settings.spritewidth;
 		
 		this.pos.x = x + settings.width -settings.spritewidth;
+		this.walkLeft = true;
 		this.setVelocity(4,6);
 		this.collidable = true;
 		this.type = me.game.ENEMY_OBJECT;
@@ -82,7 +84,7 @@ game.EnemyEntity = me.ObjectEntity.extend({
 				this.walkLeft = true;
 			}
 			this.flipX(this.walkLeft);
-			this.vel.x=+(this.walkLeft)?-this.accelx*me.timer.tick: this.accel.x * me.timer.tick;
+			this.vel.x +=(this.walkLeft)?-this.accel.x*me.timer.tick: this.accel.x * me.timer.tick;
 		}else{
 			this.vel.x = 0;
 		}

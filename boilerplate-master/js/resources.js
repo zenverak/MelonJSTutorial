@@ -28,6 +28,7 @@ src: "data/img/sprite/spinning_coin_gold.png"
 },
 {name: "wheelie_right" ,
 type:"image"   ,
-src:"data/img/sprite/spinning_coin_gold.png"   
-}
+src:"data/img/sprite/wheelie_right.png"   
+},
+{ name: 'metatiles32x32', type: 'image', src: "data/img/map/metatiles32x32.png"}
 ];
